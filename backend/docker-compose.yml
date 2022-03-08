@@ -1,0 +1,28 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .docker
+    container_name: app
+    restart: 'no'
+    environment:
+      XDEBUG_ENABLED: "true" 
+    ports:
+      - "80:8080"
+      - "8083:8083"
+    volumes:
+      - ./:/var/www/app
+    depends_on:
+      - app-mysql
+
+  app-mysql:
+    image: mysql
+    container_name: app_mysql
+    restart: 'no'
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./.docker/dbdata:/var/lib/mysql"
+    environment:
+      MYSQL_DATABASE: app
+      MYSQL_ROOT_PASSWORD: root

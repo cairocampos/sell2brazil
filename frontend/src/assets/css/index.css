@@ -1,0 +1,267 @@
+
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	@apply bg-gray-100;
+}
+
+.btn {
+	@apply text-center py-2 px-4 rounded-md;
+}
+
+.btn:disabled {
+	@apply cursor-not-allowed opacity-50;
+}
+
+.btn-md {
+	@apply text-base px-6 py-2;
+}
+
+.btn-sm {
+	@apply text-xs px-6 py-2;
+}
+
+.btn-circle {
+	@apply rounded-full;
+}
+
+.btn-blue {
+	@apply text-white hover:bg-blue-600;
+	background-color: #006FD6;
+	transition: all .3s;
+}
+
+.btn-dark {
+	background: linear-gradient(180deg, #494545 -46.02%, #2F2D2C 100%);
+	font-weight: 600;
+	@apply text-white;
+}
+
+.btn-dark-secondary {
+	background: linear-gradient(180deg, #494545 -46.02%, #2F2D2C 100%);
+	font-weight: 600;
+	@apply text-gray-500;
+}
+
+.btn-primary {
+	@apply text-white hover:bg-blue-600;
+	background-color: #006FD6;
+	transition: all .3s;
+}
+
+.btn-secondary {
+	@apply bg-gray-200;
+}
+
+.btn-outline-secondary {
+	@apply border border-gray-800 text-gray-600;
+}
+
+.btn-danger {
+	@apply bg-red-500;
+}
+
+.btn-success {
+	@apply bg-green-600 text-white;
+}
+
+.title-page {
+	@apply text-2xl text-gray-600;
+}
+
+.text-default {
+	@apply text-gray-600;
+}
+
+.text-color-base {
+	color:#2F2D2C;
+}
+
+.text-default-bold {
+	@apply text-gray-800;
+}
+
+.text-dark {
+	@apply text-gray-700;
+}
+
+.text-danger {
+	@apply text-red-500;
+}
+
+.form {
+	@apply space-y-4;
+}
+
+.form-sm {
+	@apply text-sm;
+}
+
+.form-group {
+	@apply flex flex-col text-left space-y-1 transition;
+}
+
+.form-control {
+	@apply w-full bg-gray-200 rounded-sm px-4 py-2 focus:outline-none  focus:bg-white;
+}
+
+.form-control-line {
+	@apply border-b border-gray-400 bg-transparent rounded-none focus:bg-transparent focus:border-b-2;
+}
+
+.form-control-line.error {
+	@apply border-red-500
+}
+
+.input-sm {
+	@apply py-2 px-2 text-xs text-default;
+}
+
+.input-white {
+	@apply bg-white border border-gray-200 focus:border-gray-200;
+}
+
+.form-check {
+	@apply flex items-center space-x-2
+}
+
+.label {
+	@apply text-sm text-gray-500;
+}
+
+.form-sm .label {
+	@apply text-xs;
+}
+
+.table {
+	border-spacing: 0 8px;
+}
+
+.table-sm {
+	@apply text-sm;
+}
+
+.input-group {
+	@apply w-full bg-gray-200 rounded-sm px-4 py-2 focus:outline-none flex items-center;
+}
+
+.input-group-line {
+	@apply border-b border-gray-400 bg-transparent rounded-none focus:bg-transparent;
+}
+
+.text-link {
+	@apply text-blue-600 text-xs;
+}
+
+.tooltip__custom {
+    position: absolute;
+    font-size: 12px;
+    color:white;
+    padding: 6px;
+    opacity: 0.9;
+    border-radius: 4px;
+    background: #111;
+    white-space: pre-wrap;
+    max-width: 200px;
+	transition: opacity .3s;
+    top: 0;
+    left: 0;
+}
+
+.tooltip__custom::before {
+    content:'';
+    position: absolute;
+    background: inherit;
+    height: 10px;
+    width: 10px;
+    transform: rotate(45deg);
+}
+
+.tooltip__custom-top::before, 
+.tooltip__custom-bottom::before {
+    left: 50%;
+    margin-left: -5px;
+}
+
+.tooltip__custom-left::before, 
+.tooltip__custom-right::before {
+    top: 50%;
+    margin-top: -5px;
+}
+
+.tooltip__custom-top::before {
+    bottom: -5px;
+}
+
+.tooltip__custom-bottom::before {
+    top: -5px;
+}
+
+.tooltip__custom-left::before {
+    right: -5px;
+}
+.tooltip__custom-right::before {
+    left: -5px;
+}
+
+.tooltip__custom-top::before {
+    bottom: -5px;
+}
+
+.tooltip__custom-bottom::before {
+    top: -5px;
+}
+
+@tailwind utilities;
+
+@layer base {
+	h1 {
+		@apply text-2xl;
+	}
+	h2 {
+		@apply text-xl;
+	}
+
+	h3 {
+		@apply text-2xl;
+	}
+	table {
+		border-spacing: 0 8px;
+		@apply text-left table-auto border-separate;
+	}
+
+	table thead th {
+		color: #787676;
+		@apply text-sm;
+	}
+
+	table tbody tr td {
+		@apply bg-gray-200 text-gray-700;
+	}
+
+	table.table-white tbody tr td {
+		@apply bg-white;
+	}
+
+	table tbody tr td:first-child {
+		@apply rounded-l-md;
+	}
+
+	table tbody tr td:last-child {
+		@apply rounded-r-md;
+	}
+
+	table tbody td {
+		@apply p-4;
+	}
+
+	table thead th {
+		@apply text-sm font-light pl-4;
+	}
+}
